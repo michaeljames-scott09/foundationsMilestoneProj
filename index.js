@@ -14,12 +14,21 @@ updateBtn.addEventListener("click", () => {
 });
 
 // **** Average Subjects in bookshelf ******
+// Yeah i dont understand how make this work. I feel like i probably should have added this
+// to the render function but im not getting a response that makes sense to me here 
 
 const subjAverage = document.getElementsByClassName("subCount")
-
+const numBooks = bookshelf.visibleBooks.length
+const x = 0
+const numSubjects = () => {
+  for (i= numBooks; i > 0; i--) {
+    bookshelf.visibleBooks[i].subject.length + x
+  }
+  return x
+}
+const avgSub = numSubjects/numBooks
+subjAverage.replace(avgSub.textContent)
   
-
-
 
 // Search function
 
