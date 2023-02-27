@@ -1,0 +1,119 @@
+#mainpage {
+    margin: 0px;
+    background-image: url(https://cdn.homedit.com/wp-content/uploads/2017/04/Tall-home-library-made-from-shelves.jpg);
+    backdrop-filter: opacity;
+
+}
+
+nav {
+    display: flex;
+    background-color: antiquewhite;
+    justify-content: right;
+    padding-right: 25px;
+
+}
+
+nav > a {
+
+    font-size: 24px;
+    color: rgb(0, 174, 255);
+    text-decoration: none;
+    margin: 5px;
+    
+}
+
+h1 {
+    display: flex;
+    background-color: antiquewhite;
+    width: fit-content;
+    margin: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#searchBar {
+    display: flex;
+    gap: 2rem;
+    margin-top: 10px;
+    margin-left: 5px;
+    background-color: antiquewhite;
+    padding: 5px;
+    width: fit-content;
+    border: 1px solid black
+}
+
+#addBooks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+    margin-bottom: 10px;
+    width: 850px;
+    
+}
+
+#addBooks > label {
+    display: flex;
+    background-color: antiquewhite;
+    width: fit-content;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 1px solid black;
+}
+
+#addBooks > input {
+    border: 1px solid black;
+        
+}
+
+
+#addBooksBtn {
+    display: inline-block;
+    width: fit-content;
+    gap: 10px;
+    border: 1px solid black;
+}
+
+#addBooks {
+    margin: 10px;
+    padding: 25px;
+    border-bottom: solid 5px darkgrey;
+}
+
+li {
+    padding-left: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    color: antiquewhite;
+    background-position: top;
+   
+}
+
+li > span {
+    color: black;
+    display: inline-block;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 5px;
+    width: 600px;
+    background-color: antiquewhite;
+}
+
+li > button {
+    background-color: antiquewhite;
+    color: black;
+    border: 1px solid black;
+    margin: 10px 2px;
+    padding: 5px;
+    
+}
+
+li > input {
+    background-color: antiquewhite;
+    color: black;
+    border: 1px solid black;
+    margin: 10px 2px;
+    padding: 5px;
+    
+}
+

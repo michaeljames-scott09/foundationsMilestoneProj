@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="siteFull.css" rel="stylesheet"/>
+    <script src="js/mBookData.js" defer></script>
+    <script src="js/mBook.js" defer></script>
+    <script src="js/mBookShelf.js" defer></script>
+    <script src="index.js" defer></script>
+    <title>BookListing</title>
+</head>
+<body id="mainpage">
+    <!-- NavBar here -->
+    
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="js/about.html">About</a>
+        <a href="js/contact.html">Contact</a>
+    </nav>
+    
+    <!-- Start of BookApp -->
+    
+    <h1>List of Books</h1>
+
+    <!-- Add new books -->
+    <section id="addBooks">
+        <label for="author">Author: </label>
+        <input type="text" id="author" placeholder="Last Name, First Name"></input>
+        <label for="title">Title: </label>
+        <input type="text" id="title" placeholder="Title"></input>
+        <label for="language">Language: </label>
+        <input type="text" id="language" placeholder="Language"></input>
+        <label for="subjects">Subjects: </label>
+        <input type="text" id="subjects" placeholder="Subjects, seperate by comma"></input>
+        <button type="button" id="addBooksBtn">Add Book</button>
+    </section>
+    
+    <!-- Search bar: Sort/Search/Favorite features here -->
+
+    <section id="searchBar">
+        <section class="search">
+            <input id="searchInput" type="text" placeholder="Search" />
+            <button class="searchBtn">Search</button>
+          </section>
+          
+          <!-- Sort -->
+          
+        <section class="sort">
+            <label>Sort by</label>
+            <select class="sortBy">
+              <option value="titleaz">Title A-Z</option>
+              <option value="titleza">Title Z-A</option>
+            </select>
+          </section>
+          
+          <!-- # of Favorite Books plus Update button -->
+          
+        <section>
+            You have <span class="favCount">0</span> favorite books.
+            <button class="favUpdateBtn">Update</button>
+          </section>
+    </section>
+
+    <!-- List of Books Here -->
+
+    <main id="app">
+        
+    </main>
+  </body>
+</html>
