@@ -4,7 +4,6 @@ const bookshelfElement = document.querySelector(".books");
 const bookshelf = new Bookshelf(bookshelfElement);
 bookshelf.seed(bookData);
 
-
 // Favorite listing
 
 const favCount = document.querySelector(".favCount");
@@ -14,29 +13,40 @@ updateBtn.addEventListener("click", () => {
   favCount.textContent = bookshelf.countFavoriteBooks();
 });
 
+// **** Average Subjects in bookshelf ******
+
+const subjAverage = document.querySelector(".subCount")
+let subjCount = 0
+let subArray = []
+for (book in bookshelf) {
+  subArray = subArray.concat(this.subject)
+}
+avgSubjects = (subArray.length-1)/(bookshelf.length-1)
+subjAverage.textContent.replaceWith(avgSubjects)
 
 // Search function
 
-const searchInput = document.getElementById("searchInput").value;
+const searchInput = document.getElementById("searchInput");
 const searchBtn = document.querySelector(".searchBtn");
 
 
 searchBtn.addEventListener("click", () => {
-  const query = searchInput.toLowerCase()
-  const searchFn = (b) => {
-    if (b.title.toLowerCase().includes(query) === true) {
+  const query = searchInput.value
+  const searchFn = (b, query) => {
+    if (b.title.toLowerCase().includes(query.toLowerCase())) {
       return b
     }
-    if (b.author.toLowerCase().includes(query) === true) {
+    if (b.author.toLowerCase().includes(query.toLowerCase())) {
       return b
     }    
-    if (b.language.toLowerCase().includes(query) === true) {
+    if (b.language.toLowerCase().includes(query.toLowerCase())) {
       return b
     }
-    if (b.subject.toLowerCase().includes(query) === true) {
+    if (b.subject.toLowerCase().includes(query.toLowerCase())) {
       return b
-    }
+    } else {
     return
+    }
   }
   bookshelf.filterVisibleBooks(searchFn);
 });

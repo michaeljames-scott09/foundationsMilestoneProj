@@ -1,0 +1,28 @@
+body {
+    background-color: antiquewhite;
+    color:rgb(12, 87, 122)
+}
+
+
+nav {
+    display: flex;
+    background-color: antiquewhite;
+    justify-content: right;
+    padding-right: 25px;
+    border-bottom: 1px solid black;
+
+}
+
+nav > a {
+
+    font-size: 24px;
+    color: rgb(0, 174, 255);
+    text-decoration: none;
+    margin: 5px;
+    
+}
+
+
+div {
+    width: 400px
+}

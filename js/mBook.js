@@ -5,11 +5,11 @@ class Book {
     this.subject = subject
     this.title = title
     this.isFavorite = false
-    this.comment = ""
+    this.comment = "No comment"
   }
 
   render() {
-    /* NOTE: Change render! This is currently a barebones template. */
+    // Adds the title (this.title) to the list item
     const li = document.createElement("li")
     const listText = document.createElement("span")
     listText.innerText = this.title
@@ -28,6 +28,9 @@ class Book {
     });
 
     // Comment Button / field
+    // Comment field is always visible but the button opens the place where
+    //  the comment is stored so it can be viewed
+
     const commBtn = document.createElement("button")
     commBtn.textContent = "Comment"
     li.append(commBtn)
@@ -41,7 +44,11 @@ class Book {
     commReference.textContent = "Note"
     li.append(commReference)
 
+// Whole section would not allow me to use the .setAttribute to change whether the box was visible or not
+// Had to resort to .style.display = "none/black"
+
     const commRend = document.createElement("span")
+    commRend.setAttribute("class", "commentBox")
     commRend.style.display = "none"
     commRend.textContent = this.comment
     li.append(commRend)
@@ -54,9 +61,11 @@ class Book {
     commReference.addEventListener("click", () => {
       if (commRend.style.display === "none") {
         commRend.style.display = "block"
-      } 
+      } else {
       commRend.style.display = "none"   
+      }
     })
+    // Returns the list item with everything inside it so it can be sent to the ul
     return li;
   }
 }
