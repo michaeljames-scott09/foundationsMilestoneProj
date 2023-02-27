@@ -4,6 +4,12 @@ class Book {
     this.language = language
     this.subject = subject
     this.title = title
+    this.numPages = Math.floor(Math.random() * 10000)
+    if (this.numPages >= 100) {
+        this.category = "novel"
+      }
+      this.category = "short story"
+    
     this.isFavorite = false
     this.comment = "No comment"
   }

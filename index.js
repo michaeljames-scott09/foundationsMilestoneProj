@@ -15,41 +15,54 @@ updateBtn.addEventListener("click", () => {
 
 // **** Average Subjects in bookshelf ******
 
-const subjAverage = document.querySelector(".subCount")
-let subjCount = 0
-let subArray = []
-for (book in bookshelf) {
-  subArray = subArray.concat(this.subject)
-}
-avgSubjects = (subArray.length-1)/(bookshelf.length-1)
-subjAverage.textContent.replaceWith(avgSubjects)
+const subjAverage = document.getElementsByClassName("subCount")
+
+  
+
+
 
 // Search function
 
 const searchInput = document.getElementById("searchInput");
 const searchBtn = document.querySelector(".searchBtn");
 
+// I dont completely understand whats going on here but this is my best attempt at adapting some code from google, to work with this bookshelf app
+// It doesnt  work  and the psuedo code below was the other attempt that i think was second closest to work with the forEach loop
 
-searchBtn.addEventListener("click", () => {
-  const query = searchInput.value
-  const searchFn = (b, query) => {
-    if (b.title.toLowerCase().includes(query.toLowerCase())) {
-      return b
-    }
-    if (b.author.toLowerCase().includes(query.toLowerCase())) {
-      return b
-    }    
-    if (b.language.toLowerCase().includes(query.toLowerCase())) {
-      return b
-    }
-    if (b.subject.toLowerCase().includes(query.toLowerCase())) {
-      return b
-    } else {
-    return
-    }
-  }
-  bookshelf.filterVisibleBooks(searchFn);
-});
+
+// function searchBooks(book, searchInput) {
+//   return Object.values(book).some(value => {
+//     if (typeof value === "string") {
+//       return value.toLowerCase().includes(searchInput.toLowerCase())
+//     } 
+//     return
+//   })
+// }
+
+searchBtn.addEventListener("click", (searchInput)=> {
+  bookshelf.filterVisibleBooks((book) => {
+    book[keys].forEach((key) => {
+      if (book[key].includes(searchInput)) {
+        return book
+      }
+      return false
+    })
+  })
+})
+
+// searchBtn.addEventListener("click", () => {
+//   const searchFn = (bookshelf, searchInput) => {
+//     return bookshelf.filterVisibleBooks(book => {
+//       book.keys().forEach(key => {
+//         if (book[key].includes(searchInput.value)) {
+//           return book
+//         }
+//         return
+//       })
+//     })
+//   }
+//   })
+
 
 
 // Sort function
@@ -88,3 +101,26 @@ BookAddBtn.addEventListener("click", () => {
   bookshelf.render()
   
 })
+
+// Language Search buttons
+// English
+const englishSearch = document.querySelector(".English")
+englishSearch.addEventListener("click", () => {
+  bookshelf.filterVisibleBooks(book => book.language === "en") 
+})
+// German
+const germanSearch = document.querySelector(".German")
+germanSearch.addEventListener("click", () => {
+  bookshelf.filterVisibleBooks(book => book.language === "de")
+})
+// French
+const  frenchSearch = document.querySelector(".French")
+frenchSearch.addEventListener("click", () => {
+  bookshelf.filterVisibleBooks(book => book.language === "fr")
+})
+// Finnish
+const  finnishSearch = document.querySelector(".Finnish")
+finnishSearch.addEventListener("click", () => {
+  bookshelf.filterVisibleBooks(book => book.language === "fi")
+})
+
